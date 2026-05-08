@@ -33,21 +33,6 @@ In progress 🚧
 In progress 🚧 
 <!-- Todo: ![alt text](image-url / thumbnail url) -->
 
-<!-- ```mermaid
-graph LR
-    A["Input / Prompt"] --> B["LLM / AI Agent"]
-    B --> C["Output"]
-    C --> D{"LLM-as-a-Judge"}
-    E["Strict Rubric / Metrics"] --> D
-    D --> F["Score (0-1)"]
-    F --> G["Improvement Task"]
-
-    subgraph Evaluation_Engine
-        D
-        E
-    end
-``` -->
-
 ## AI Output Evaluation Metrics
 
 The system evaluates AI agent and model performance using the following metrics:

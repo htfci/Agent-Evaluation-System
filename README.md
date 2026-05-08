@@ -33,7 +33,7 @@ In progress 🚧
 In progress 🚧 
 <!-- Todo: ![alt text](image-url / thumbnail url) -->
 
-```mermaid
+<!-- ```mermaid
 graph LR
     A["Input / Prompt"] --> B["LLM / AI Agent"]
     B --> C["Output"]
@@ -46,7 +46,7 @@ graph LR
         D
         E
     end
-```
+``` -->
 
 ## AI Output Evaluation Metrics
 
@@ -76,4 +76,4 @@ Planned 📌
 * Integration of an event-driven logging pipeline
 
 ---
-*Developed to make AI content trustworthy and measurable.*
+*Developed to make AI content trustworthy and measurable*

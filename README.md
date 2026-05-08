@@ -14,16 +14,16 @@ Key features:
 ## Getting Started
 In progress 🚧 
 
-Integrating the evaluation system into your AI application takes just a few steps:
+~~Integrating the evaluation system into your AI application takes just a few steps:~~
 
-1. Sign up and create an account  
-2. Get your API key from the dashboard
-3. Install the SDK in your application  
-4. Log your agent runs with a single function call
+~~1. Sign up and create an account~~  
+~~2. Get your API key from the dashboard~~  
+~~3. Install the SDK in your application~~  
+~~4. Log your agent runs with a single function call~~
 
-Then, your application sends run data directly to the evaluation API via a simple push integration.
+~~Then, your application sends run data directly to the evaluation API via a simple push integration.~~
 
-*See the Demo section below to watch how the integration works.*
+*~~See the Demo section below to watch how the integration works.~~*
 
 ## Demo
 In progress 🚧

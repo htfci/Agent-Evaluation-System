@@ -30,8 +30,73 @@ In progress 🚧
 <!-- Todo: [![alt text](thumbnail-image-url)](thumbail-video-url) -->
 
 ## System Architecture
-In progress 🚧 
-<!-- Todo: ![alt text](image-url / thumbnail url) -->
+```mermaid
+graph TD
+    %% Setup Fase
+    subgraph Setup ["1. Onboarding"]
+        Dev[Developer] -->|Sign Up| Dash[Dashboard]
+        Dash -->|Provision| Key[API Key]
+    end
+
+    %% Client Zijde
+    subgraph Client_App ["2. Client Application (SDK)"]
+        direction TB
+        App[AI Agent Run] --> SDK{SDK .log}
+        
+        subgraph Data_Captured ["Telemetry Data"]
+            direction LR
+            P[Prompt] --- C[Context] --- T[Tools] --- O[Output]
+        end
+        
+        SDK --> Data_Captured
+    end
+
+    %% Ingestion & Storage
+    Key -.-> Auth[Secure Auth]
+    Data_Captured ==> Auth
+    Auth ==> API[Evaluation API]
+    
+    subgraph Storage ["3. Persistence Layer (PostgreSQL)"]
+        DB[(PostgreSQL Database)]
+        Logs[(Raw Agent Logs)]
+        Results[(Evaluation Results)]
+    end
+
+    API ==> Logs
+    Logs --- DB
+    Results --- DB
+
+    %% De Engine
+    subgraph Eval_Engine ["4. Evaluation Engine"]
+        direction TB
+        DB ==>|Fetch Traces| Judge[LLM-as-a-Judge]
+        
+        subgraph Metrics ["Criteria"]
+            direction LR
+            M1[RAG Triad] --- M2[Safety] --- M3[Reliability]
+        end
+        
+        Metrics --> Judge
+        Judge ==>|Store Scores| Results
+    end
+
+    %% De Output
+    subgraph Insights ["5. Insights & Actions"]
+        direction LR
+        Results --> Scores[Scores & Analytics]
+        Scores --> Failures[Failure Detection]
+        Failures --> Tasks[Improvement Tasks]
+    end
+
+    %% Styling
+    style Setup fill:#f5f5f5,stroke:#ccc
+    style Client_App fill:#e8f5e9,stroke:#2e7d32
+    style Eval_Engine fill:#e3f2fd,stroke:#1565c0
+    style Insights fill:#fff3e0,stroke:#ef6c00
+    style Judge fill:#1565c0,color:#fff
+    style DB fill:#336791,color:#fff
+    style Storage fill:#f9f9f9,stroke:#333
+```
 
 ## AI Output Evaluation Metrics
 

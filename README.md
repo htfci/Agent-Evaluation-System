@@ -123,8 +123,7 @@ Planned 📌
 
 Installation instructions will be provided here as soon as the initial MVP release is stable.
 
-Planned distribution method:
-* Docker images
+Planned distribution method: **Docker images**
 
 ## Future Work
 * Expansion of this project into a full AI Observation Platform, supporting not only LLMs and AI agents, but also other modalities such as Computer Vision and Speech Processing.

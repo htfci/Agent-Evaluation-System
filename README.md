@@ -2,7 +2,7 @@
 *A tool designed to measure the output quality and reliability of AI Agents*
 
 ## Overview
-The AI Agent Evaluation System provides developers and companies with data-driven insights into the accuracy, reliability, and consistency of AI content by evaluating agents and their underlying models against strict, predefined metrics.
+The System provides developers insights into the accuracy, reliability, and consistency of AI content by evaluating agents and their underlying models against strict, predefined metrics.
 
 Key features:
 * Measures the accuracy and relevance of agent outputs using standardized evaluation frameworks.
@@ -100,20 +100,21 @@ graph TD
 
 ## AI Output Evaluation Metrics
 
-The system evaluates AI agent and model performance using the following metrics:
+The system evaluates AI agent and model performance across three core pillars:
 
-### 1. Content Quality (The RAG Triad Evaluation Method)
-* Checks if the answer is fully supported by the retrieved context (to minimize hallucinations).
+### 1. Content Quality (The RAG Triad)
+* Checks if the answer is fully supported by the retrieved context to minimize hallucinations.
 * Measures how directly and completely the output addresses the specific user query.
-* Evaluates whether the sources retrieved by the system are truly relevant to the question.
+* Evaluates whether the sources retrieved by the system are truly relevant to the query.
 
-### 2. Reliability
+### 2. Agent Reliability
+* Verifies if the agent selects the correct tool and formats the arguments properly based on the context.
 * Assesses how well the output matches known facts.
 * Measures consistency of outputs across repeated runs with the same input.
 * Tracks stability of outputs over time to detect semantic drift in agent behavior or underlying data.
 
 ### 3. Safety & Risk Mitigation
-* Detects harmful content, bias, or unsafe language in outputs.
+* Detects harmful content, bias, or toxic (unsafe) language within the agent's reasoning or final output.
 * Checks for accidental exposure of sensitive or personally identifiable information (PII).
 * Ensures outputs comply with safety constraints and policy rules.
 

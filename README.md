@@ -12,7 +12,7 @@ Key features:
 * Automatically identifies failures and generates targeted improvement tasks for prompts, tools, or configurations.
 
 ## Getting Started
-In progress 🚧 
+In progress
 
 ~~Integrating the evaluation system into your AI application takes just a few steps:~~
 
@@ -26,7 +26,7 @@ In progress 🚧
 *~~See the Demo section below to watch how the integration works.~~*
 
 ## Demo
-In progress 🚧
+In progress
 <!-- Todo: [![alt text](thumbnail-image-url)](thumbail-video-url) -->
 
 ## System Architecture
@@ -119,7 +119,7 @@ The system evaluates AI agent and model performance across three core pillars:
 * Ensures outputs comply with safety constraints and policy rules.
 
 ## Installation
-Planned 📌 
+Planned
 
 Planned distribution method: **Docker images**
 

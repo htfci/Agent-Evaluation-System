@@ -1,6 +1,138 @@
 databaseChangeLog:
   - changeSet:
-      id: 0
-      author: admin
+      id: 1
+      author: huseyin
       changes:
-        -
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: user_name
+                  type: varchar(32)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+
+  - changeSet:
+      id: 2
+      author: huseyin
+      changes:
+        - createTable:
+            tableName: passwords
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: password_hash
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: user_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    unique: true
+        - addForeignKeyConstraint:
+            constraintName: fk_passwords_users
+            baseTableName: passwords
+            baseColumnNames: user_id
+            referencedTableName: users
+            referencedColumnNames: id
+            onDelete: CASCADE
+
+  - changeSet:
+      id: 3
+      author: huseyin
+      changes:
+        - createTable:
+            tableName: api_keys
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: key_hash
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: user_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    unique: true
+        - addForeignKeyConstraint:
+            constraintName: fk_api_keys_users
+            baseTableName: api_keys
+            baseColumnNames: user_id
+            referencedTableName: users
+            referencedColumnNames: id
+
+  - changeSet:
+      id: 4
+      author: huseyin
+      changes:
+        - createTable:
+            tableName: runs
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: input
+                  type: jsonb
+                  constraints:
+                    nullable: false
+              - column:
+                  name: output
+                  type: jsonb
+                  constraints:
+                    nullable: false
+              - column:
+                  name: metadata
+                  type: jsonb
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            constraintName: fk_runs_users
+            baseTableName: runs
+            baseColumnNames: user_id
+            referencedTableName: users
+            referencedColumnNames: id
+        # Added index for high-volume telemetry lookups
+        - createIndex:
+            indexName: idx_runs_user_id
+            tableName: runs
+            columns:
+              - column:
+                  name: user_id

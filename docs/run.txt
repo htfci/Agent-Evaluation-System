@@ -1,0 +1,14 @@
+A Run is a snapshot of a single end-to-end AI agent interaction.
+
+
+┌────────────────────────────────────────────────────────┐
+│                      A SINGLE RUN                      │
+├────────────────────────────────────────────────────────┤
+│ 📥 User Input   : "What's the weather in Amsterdam?"   │
+│                                                        │
+│ 🛠️ Tool Calls  : [WeatherAPI(location="Amsterdam")]   │
+│                                                        │
+│ 📤 Model Output : "It is currently 18°C..."  │
+│                                                        │
+│ ⚙️ Metadata     : {model: "gemini-3.5-flash", ...}    │
+└────────────────────────────────────────────────────────┘

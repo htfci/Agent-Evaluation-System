@@ -88,6 +88,7 @@ databaseChangeLog:
             baseColumnNames: user_id
             referencedTableName: users
             referencedColumnNames: id
+            onDelete: CASCADE
 
   - changeSet:
       id: 4

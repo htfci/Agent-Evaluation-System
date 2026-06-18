@@ -1,5 +1,6 @@
-package dev.htfci.server.entities;
+package dev.htfci.server.evaluation;
 
+import dev.htfci.server.identity.UserEntity;
 import jakarta.persistence.*;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
@@ -10,10 +11,11 @@ import org.hibernate.type.SqlTypes;
 public class RunEntity {
     @Id()
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false, updatable = false)
     private long id;
 
-    @JdbcTypeCode(SqlTypes.JSON) // (java side) -> deserialize JSON back into Java object when pulling out of DB
-    @Column(columnDefinition = "jsonb") // (postgres side) -> store this JSON data by using jsonb binary format
+    @JdbcTypeCode(SqlTypes.JSON)
+    @Column(columnDefinition = "jsonb")
     private RunInput input;
 
     @JdbcTypeCode(SqlTypes.JSON)
@@ -21,13 +23,15 @@ public class RunEntity {
     private RunOutput output;
 
     @JdbcTypeCode(SqlTypes.JSON)
-    @Column(name = "metadata", columnDefinition = "jsonb")
-    private RunMetaData metaData;
+    @Column(columnDefinition = "jsonb")
+    private RunMetadata metadata;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_id", nullable = false, updatable = false)
     private UserEntity user;
 
-    public RunEntity() {}
+    protected RunEntity() {}
+
+    
 }
 

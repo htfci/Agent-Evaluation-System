@@ -1,8 +1,8 @@
-# AI Agent Evaluation System (MVP)
-*A tool designed to measure the output quality and reliability of AI Agents*
+# AI Agent Evaluation MVP
+*A tool designed to measure the output quality and reliability of LLMs and AI Agents*
 
 ## Overview
-The System provides developers insights into the accuracy, reliability, and consistency of AI content by evaluating agents and their underlying models against strict, predefined metrics.
+The System provides insights into the accuracy, reliability, and consistency of AI content by evaluating agents and their underlying models against strict, predefined metrics.
 
 Key features:
 * Measures the accuracy and relevance of agent outputs using standardized evaluation frameworks.
@@ -11,8 +11,7 @@ Key features:
 * Provides clear explanations for why an output scored high or low.
 * Automatically identifies failures and generates targeted improvement tasks for prompts, tools, or configurations.
 
-## Getting Started
-In progress
+## Getting Started (In progress)
 
 ~~Integrating the evaluation system into your AI application takes just a few steps:~~
 
@@ -25,8 +24,7 @@ In progress
 
 *~~See the Demo section below to watch how the integration works.~~*
 
-## Demo
-In progress
+## Demo (In progress)
 <!-- Todo: [![alt text](thumbnail-image-url)](thumbail-video-url) -->
 
 ## System Architecture
@@ -98,11 +96,11 @@ graph TD
     style Storage fill:#f9f9f9,stroke:#333
 ```
 
-## AI Output Evaluation Metrics
+## Evaluation Metrics
 
 The system evaluates AI agent and model performance across three core pillars:
 
-### 1. Content Quality (The RAG Triad)
+### 1. Content Quality
 * Checks if the answer is fully supported by the retrieved context to minimize hallucinations.
 * Measures how directly and completely the output addresses the specific user query.
 * Evaluates whether the sources retrieved by the system are truly relevant to the query.
@@ -118,12 +116,11 @@ The system evaluates AI agent and model performance across three core pillars:
 * Checks for accidental exposure of sensitive or personally identifiable information (PII).
 * Ensures outputs comply with safety constraints and policy rules.
 
-## Installation
-Planned
+## Installation (Planned)
 
 Planned distribution method: **Docker images**
 
-Installation instructions will be provided here as soon as the initial MVP release is stable.
+*Installation instructions will be provided here as soon as the initial MVP release is stable.*
 
 ## Future Work
 * Expansion of this project into a full AI Observation Platform, supporting not only LLMs and AI agents, but also other modalities such as Computer Vision and Speech Processing.

@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-
 @Entity
 @Table(name = "users")
 public class UserEntity {
@@ -39,13 +38,13 @@ public class UserEntity {
         this.passwordHash = passwordHash;
     }
 
-    public UUID getId() {return this.id;}
+    public UUID getId() {return id;}
 
-    public String getUserName() {return this.userName;}
+    public String getUserName() {return userName;}
 
-    public String getEmail() {return this.email;}
+    public String getEmail() {return email;}
 
-    public String getPasswordHash() {return this.passwordHash;}
+    public String getPasswordHash() {return passwordHash;}
 
     public String getApiKeyHash() {return apiKeyHash;}
 

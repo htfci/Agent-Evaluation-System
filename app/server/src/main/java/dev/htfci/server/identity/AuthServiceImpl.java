@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Objects;
 
-
 @Service
 class AuthServiceImpl implements AuthService {
     private final PasswordEncoder passwordEncoder;

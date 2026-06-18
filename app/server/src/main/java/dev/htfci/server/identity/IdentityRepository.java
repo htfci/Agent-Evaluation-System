@@ -7,5 +7,3 @@ import java.util.UUID;
 
 @Repository
 public interface IdentityRepository extends ListCrudRepository<UserEntity, UUID> {}
-
-

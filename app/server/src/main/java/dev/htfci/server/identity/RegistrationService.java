@@ -1,6 +1,9 @@
 package dev.htfci.server.identity;
 
 
+import java.net.URI;
+
 public interface RegistrationService {
-    public UserEntity register(UserEntity user);
+    UserEntity register(UserEntity user);
+    URI getUriFrom(UserEntity user);
 }

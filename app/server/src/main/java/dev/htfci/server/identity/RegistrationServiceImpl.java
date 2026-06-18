@@ -1,9 +1,10 @@
 package dev.htfci.server.identity;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.Objects;
-
 
 @Service
 class RegistrationServiceImpl implements RegistrationService {
@@ -21,4 +22,11 @@ class RegistrationServiceImpl implements RegistrationService {
         return identityRepository.save(user);
     }
 
+    public URI getUriFrom(UserEntity user) {
+        Objects.requireNonNull(user);
+        return ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(user.getId())
+                .toUri();
+    }
 }

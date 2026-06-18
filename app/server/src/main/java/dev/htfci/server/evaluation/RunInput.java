@@ -1,6 +1,5 @@
 package dev.htfci.server.evaluation;
 
-public record RunInput(String question, String context, String instructions) {
-    
-}
+import jakarta.validation.constraints.NotNull;
 
+public record RunInput(@NotNull String query, @NotNull String context) {}

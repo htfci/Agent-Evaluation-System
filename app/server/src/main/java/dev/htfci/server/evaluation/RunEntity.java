@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
-
 @Entity()
 @Table(name = "runs")
 public class RunEntity {
@@ -30,8 +29,6 @@ public class RunEntity {
     @JoinColumn(name = "user_id", nullable = false, updatable = false)
     private UserEntity user;
 
-    protected RunEntity() {}
-
-    
+    protected RunEntity() {
+    }
 }
-

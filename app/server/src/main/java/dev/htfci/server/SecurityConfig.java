@@ -20,10 +20,10 @@ class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean
-    public PasswordEncoder argon2PasswordEncoder() {
-        return Argon2PasswordEncoder.defaultsForSpringSecurity_v5_8();
-    }
+//    @Bean
+//    public PasswordEncoder argon2PasswordEncoder() {
+//        return Argon2PasswordEncoder.defaultsForSpringSecurity_v5_8();
+//    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {

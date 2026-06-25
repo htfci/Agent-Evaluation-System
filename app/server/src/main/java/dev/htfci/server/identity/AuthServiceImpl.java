@@ -8,23 +8,23 @@ import java.util.Objects;
 @Service
 class AuthServiceImpl implements AuthService {
     private final PasswordEncoder passwordEncoder;
+    private final IdentityRepository identityRepository;
 
 
-    protected AuthServiceImpl(PasswordEncoder passwordEncoder) {
+    protected AuthServiceImpl(PasswordEncoder passwordEncoder, IdentityRepository identityRepository) {
         this.passwordEncoder = passwordEncoder;
+        this.identityRepository = identityRepository;
     }
 
-
-    // Move this to BBL
-    private Boolean exists(String apiKeyHash) {
-        // todo: check database if key hash already exist
-        return null;
+    // todo
+    @Override
+    public String apiKey() {
+        return "";
     }
 
     @Override
-    public void put(String apiKeyHash) {
-        // First: if apiKeyHash already exists do not insert!
-        // Second: insert apiKeyHash
+    public void remove(String apiKey) {
+
     }
 
     @Override

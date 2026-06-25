@@ -2,6 +2,8 @@ package dev.htfci.server.evaluation;
 
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
+
 @Service
 public class EvalServiceImpl implements EvalService {
     private final EvalRepository evalRepository;
@@ -12,7 +14,8 @@ public class EvalServiceImpl implements EvalService {
 
     @Override
     public RunEntity save(RunEntity run) {
-        return null;
+        Objects.requireNonNull(run);
+        return evalRepository.save(run);
     }
-
+    
 }

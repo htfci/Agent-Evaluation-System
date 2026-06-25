@@ -24,7 +24,7 @@ public class UserEntity {
     @Column(name = "password_hash", nullable = false, length = 64)
     private String passwordHash;
 
-    @Column(name = "apikey_hash", updatable = false)
+    @Column(name = "apikey_hash")
     private String apiKeyHash = "";
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")

@@ -1,7 +1,8 @@
 package dev.htfci.server.identity;
 
 public interface AuthService {
-    public void put(String apiKeyHash);
-    public String hash(String rawPassword);
+    String apiKey();
+    void remove(String apiKey);
+    String hash(String rawPassword);
 }
 

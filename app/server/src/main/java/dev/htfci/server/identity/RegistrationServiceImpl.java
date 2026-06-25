@@ -24,7 +24,8 @@ class RegistrationServiceImpl implements RegistrationService {
 
     public URI getUriFrom(UserEntity user) {
         Objects.requireNonNull(user);
-        return ServletUriComponentsBuilder.fromCurrentRequest()
+        return ServletUriComponentsBuilder
+                .fromCurrentRequest()
                 .path("/{id}")
                 .buildAndExpand(user.getId())
                 .toUri();

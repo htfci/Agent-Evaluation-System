@@ -23,75 +23,19 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                     unique: true
+              - column:
+                  name: password_hash
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: apikey_hash
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
 
   - changeSet:
       id: 2
-      author: huseyin
-      changes:
-        - createTable:
-            tableName: passwords
-            columns:
-              - column:
-                  name: id
-                  type: uuid
-                  constraints:
-                    primaryKey: true
-                    nullable: false
-              - column:
-                  name: password_hash
-                  type: varchar(255)
-                  constraints:
-                    nullable: false
-                    unique: true
-              - column:
-                  name: user_id
-                  type: uuid
-                  constraints:
-                    nullable: false
-                    unique: true
-        - addForeignKeyConstraint:
-            constraintName: fk_passwords_users
-            baseTableName: passwords
-            baseColumnNames: user_id
-            referencedTableName: users
-            referencedColumnNames: id
-            onDelete: CASCADE
-
-  - changeSet:
-      id: 3
-      author: huseyin
-      changes:
-        - createTable:
-            tableName: api_keys
-            columns:
-              - column:
-                  name: id
-                  type: uuid
-                  constraints:
-                    primaryKey: true
-                    nullable: false
-              - column:
-                  name: key_hash
-                  type: varchar(255)
-                  constraints:
-                    nullable: false
-                    unique: true
-              - column:
-                  name: user_id
-                  type: uuid
-                  constraints:
-                    nullable: false
-                    unique: true
-        - addForeignKeyConstraint:
-            constraintName: fk_api_keys_users
-            baseTableName: api_keys
-            baseColumnNames: user_id
-            referencedTableName: users
-            referencedColumnNames: id
-            onDelete: CASCADE
-
-  - changeSet:
-      id: 4
       author: huseyin
       changes:
         - createTable:

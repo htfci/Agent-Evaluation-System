@@ -29,5 +29,4 @@ class IdentityController {
         URI uri = registrationService.getUriFrom(registeredUser);
         return ResponseEntity.created(uri).build();
     }
-
 }
